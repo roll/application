@@ -11,13 +11,8 @@ on:
       - main
 
 jobs:
-  # Unit Testing
-
-  test:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+  macos-packaging:
+    runs-on: macos-13
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,122 +20,30 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - name: Prepare environment
-        run: pip3 install hatch
-      - name: Install dependencies
-        run: make install
-      - name: Test software
-        run: make test
-
-  # End to End Testing
-
-  # It is powered by WebdriverIO, it requires an application binary path in our dist folder.
-  # See wdio.conf.ts capabilities attribute for more info.
-
-  test-e2e:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - name: Prepare environment
-        run: pip3 install hatch
-      - name: Install dependencies
-        run: make install
-      - name: Build the application
-        run: make build
-      - name: Generate bundle file
-        run: make dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Make AppImage executable
+      - name: Install Dependencies
         run: |
-          chmod a+x ./dist/*.AppImage
-          ls -l ./dist
-      - name: Check chrome version
-        run: google-chrome --version
-      - name: Run headless test
-        uses: coactions/setup-xvfb@v1
-        with:
-          run: npm run wdio
-
-  # Building Previews (on created pull requests)
-
-  # For GNU/Linux we need to build our application in the oldest version we want to support.
-  # https://pyinstaller.org/en/stable/usage.html?highlight=glibc#making-gnu-linux-apps-forward-compatible
-
-  # The reason we chose macos-13 as the minimum version:
-  # https://forums.developer.apple.com/forums/thread/739988
-  # "macOS 14 introduced a new container data protection feature. To learn more about that,
-  # see the link in Trusted Execution Resources.The solution here is to sign your code with a stable signing identity.
-  # For day-to-day development, that should be your Apple Development signing identity."
-
-  build:
-    if: github.event_name == 'pull_request'
-    strategy:
-      matrix:
-        os: [ubuntu-20.04, macos-13, windows-latest]
-    runs-on: ${{ matrix.os }}
-    needs: [test, test-e2e]
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-      - name: Prepare environment
-        run: pip3 install hatch
-      - name: Install dependencies
-        run: make install
-      - name: Build software
-        run: make build
-      - name: Dist software
-        run: make dist
+          pip3 install -r requirements.txt
+          pip3 install pyinstaller==6.11.1
+          brew install create-dmg
+      - name: Build and notarize the dmg file
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CSC_LINK: ${{ secrets.CSC_LINK }}
           CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
           APPLE_ID: ${{ secrets.APPLE_ID }}
           APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
-          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          chmod +x create-dmg.sh
+          ./create-dmg.sh
       - name: Archive build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: distribution-files-${{ matrix.os }}
+          name: distribution-files-macos
           path: |
-            dist/*.deb
-            dist/*.exe
-            dist/*.dmg
+            *.dmg
           retention-days: 14
-
-  # Releasing a Draft on Github (on merged pull requests)
-
-  # It will create or update a draft release on Github with all the artifacts we have built.
-  # The version in `package.json` needs to be updated to activate this action.
-
-  release:
-    if: github.event_name == 'push'
-    strategy:
-      matrix:
-        os: [ubuntu-20.04, macos-13, windows-latest]
-    runs-on: ${{ matrix.os }}
-    needs: [test, test-e2e]
+  linux-packaging:
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -148,17 +51,29 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - name: Install OS Dependencies
+        run: |
+          sudo apt-get update
+          sudo gem install fpm
+          fpm --version
+      - name: Install Qt Dependencies
+        run: |
+          # https://forum.qt.io/post/769050
+          # Fix PyInstaller warnings of Qt Dependencies missing
+          sudo apt-get install synaptic
+          sudo apt-get install libxcb-icccm4 libxcb-image0-dev libxcb-keysyms1 libxcb-render-util0 libxcb-xkb1 libxcb-xinerama0 libxkbcommon-x11-0
+      - name: Install Dependencies
+        run: |
+          pip3 install -r requirements.txt
+          pip3 install pyinstaller==6.11.1
+      - name: Build the deb package
+        run: |
+          chmod +x create-deb.sh
+          ./create-deb.sh
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v4
         with:
-          node-version: 20
-      - name: Prepare environment
-        run: pip3 install hatch
-      - name: Install dependencies
-        run: make install
-      - name: Build software
-        run: make build
-      - name: Release software
-        run: make release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: distribution-files-deb
+          path: |
+            dist/*.deb
+          retention-days: 14

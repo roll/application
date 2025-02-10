@@ -1,84 +1,44 @@
-.PHONY: all build client desktop dist docs format install lint preview release server start test type version
+.PHONY: docs install start _check_virtual_env
 
-
-VERSION := $(shell node -p -e "require('./package.json').version")
-
-
-all:
-	@grep '^\.PHONY' Makefile | cut -d' ' -f2- | tr ' ' '\n'
-
-build:
-	hatch run build
-	npm run build
-
-## Runs the React client in isolation (:8080)
-client:
-	npm run start
-
-## Runs the Electron application with live reload (requires a running server).
-desktop:
-	npm run desktop
-
-## Runs electron-builder to package and build a ready for distribution app.
-dist:
-	npm run dist
+## Show this output
+help: _showhelp
 
 ## Runs Astro dev server to serve documentation.
 docs:
 	cd portal && npm start
 
-## Runs ruff linter (including imports), ruff formater, prettier and eslint.
-format:
-	hatch run format
-	npm run format
-
-## Install application and documentation npm dependencies.
-install:
-	npm install
+## Install application requirements and documentation npm dependencies.
+install: _check_virtualenv
+	pip install wheel
+	pip install -r requirements.txt
 	cd portal && npm install
 
-## Checks ruff linter (including imports), ruff formater, prettier and eslint.
-lint:
-	hatch run lint
-	npm run lint
+## Runs the application for development mode.
+start: _check_virtualenv
+	python -m ode.main
 
-## Runs the Electron application and the server with live reload.
-preview:
-	npx concurrently 'hatch run start' 'npm run preview'
+## Create/update all the translation files (.ts) for the supported languages: es, fr, pt
+update-translations:
+	pyside6-lupdate -extensions py -recursive ode -ts ode/assets/translations/es.ts -target-language es
+	pyside6-lupdate -extensions py -recursive ode -ts ode/assets/translations/fr.ts -target-language fr
+	pyside6-lupdate -extensions py -recursive ode -ts ode/assets/translations/pt.ts -target-language pt
 
-## Runs electron-builder to release the app.
-release:
-	npm run release
+## Compile all the translation files (.ts) to .qm files.
+compile-translations:
+	pyside6-lrelease ode/assets/translations/es.ts -qm ode/assets/translations/es.qm
+	pyside6-lrelease ode/assets/translations/fr.ts -qm ode/assets/translations/fr.qm
+	pyside6-lrelease ode/assets/translations/pt.ts -qm ode/assets/translations/pt.qm
 
-## Runs the FastAPI server in isolation (:4040).
-server:
-	hatch run start
+## Open PySide6 Linguistic application
+linguist:
+	pyside6-linguist
 
-## Runs the React client (:8080) and the Uvicorn server (:4040) concurrently.
-start:
-	npx concurrently 'hatch run start' 'npm run start'
-
-## Runs the whole suit of tests for server and client.
-test:
-	hatch run test
-	npm run test
-
-## Runs the translation script to update the translation files.
-translate:
-	npm run translate
-
-## Runs the E2E suite of tests (requires make dist for an application bundle)
-test-e2e:
-	npm run wdio
-
-## Checks types with pyright and typescript
-type:
-	hatch run type
-	npm run type
-
-version:
-	@echo $(VERSION)
-
+# Private target
+_check_virtualenv:
+	@if [ -z "$(VIRTUAL_ENV)" ]; then \
+		echo "You need to first activate your virtual environment by running: source venv/bin/activate"; \
+		exit 1; \
+	fi
 
 ## Show help
 GREEN  := $(shell tput -Txterm setaf 2)
@@ -87,7 +47,7 @@ WHITE  := $(shell tput -Txterm setaf 7)
 RESET  := $(shell tput -Txterm sgr0)
 TARGET_MAX_CHAR_NUM := 20
 
-help:
+_showhelp:
 	@echo ''
 	@echo 'Usage:'
 	@echo '  ${YELLOW}make${RESET} ${GREEN}<target>${RESET}'

@@ -1,0 +1,572 @@
+[
+  {
+    "name": "AAL",
+    "path": "https://opensource.org/licenses/AAL",
+    "title": "Attribution Assurance Licenses"
+  },
+  {
+    "name": "AFL-3.0",
+    "path": "https://opensource.org/licenses/AFL-3.0",
+    "title": "Academic Free License 3.0"
+  },
+  {
+    "name": "AGPL-3.0",
+    "path": "https://opensource.org/licenses/AGPL-3.0",
+    "title": "GNU Affero General Public License v3"
+  },
+  {
+    "name": "APL-1.0",
+    "path": "https://opensource.org/licenses/APL-1.0",
+    "title": "Adaptive Public License 1.0"
+  },
+  {
+    "name": "APSL-2.0",
+    "path": "https://opensource.org/licenses/APSL-2.0",
+    "title": "Apple Public Source License 2.0"
+  },
+  {
+    "name": "Against-DRM",
+    "path": "https://opendefinition.org/licenses/against-drm",
+    "title": "Against DRM"
+  },
+  {
+    "name": "Apache-1.1",
+    "path": "https://opensource.org/licenses/Apache-1.1",
+    "title": "Apache Software License 1.1"
+  },
+  {
+    "name": "Apache-2.0",
+    "path": "https://opensource.org/licenses/Apache-2.0",
+    "title": "Apache Software License 2.0"
+  },
+  {
+    "name": "Artistic-2.0",
+    "path": "https://opensource.org/licenses/Artistic-2.0",
+    "title": "Artistic License 2.0"
+  },
+  {
+    "name": "BSD-2-Clause",
+    "path": "https://opensource.org/licenses/BSD-2-Clause",
+    "title": "BSD 2-Clause \"Simplified\" or \"FreeBSD\" License (BSD-2-Clause)"
+  },
+  {
+    "name": "BSD-3-Clause",
+    "path": "https://opensource.org/licenses/BSD-3-Clause",
+    "title": "BSD 3-Clause \"New\" or \"Revised\" License (BSD-3-Clause)"
+  },
+  {
+    "name": "BSL-1.0",
+    "path": "https://opensource.org/licenses/BSL-1.0",
+    "title": "Boost Software License 1.0"
+  },
+  {
+    "name": "BitTorrent-1.1",
+    "path": "https://spdx.org/licenses/BitTorrent-1.1",
+    "title": "BitTorrent Open Source License 1.1"
+  },
+  {
+    "name": "CATOSL-1.1",
+    "path": "https://opensource.org/licenses/CATOSL-1.1",
+    "title": "Computer Associates Trusted Open Source License 1.1 (CATOSL-1.1)"
+  },
+  {
+    "name": "CC-BY-4.0",
+    "path": "https://creativecommons.org/licenses/by/4.0/",
+    "title": "Creative Commons Attribution 4.0"
+  },
+  {
+    "name": "CC-BY-NC-4.0",
+    "path": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "title": "Creative Commons Attribution-NonCommercial 4.0"
+  },
+  {
+    "name": "CC-BY-NC-ND-4.0",
+    "path": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "title": "Attribution-NonCommercial-NoDerivatives 4.0"
+  },
+  {
+    "name": "CC-BY-NC-SA-4.0",
+    "path": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "title": "Attribution-NonCommercial-ShareAlike 4.0"
+  },
+  {
+    "name": "CC-BY-ND-4.0",
+    "path": "https://creativecommons.org/licenses/by-nd/4.0/",
+    "title": "Attribution-NoDerivatives 4.0"
+  },
+  {
+    "name": "CC-BY-SA-4.0",
+    "path": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "title": "Creative Commons Attribution Share-Alike 4.0"
+  },
+  {
+    "name": "CC0-1.0",
+    "path": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "title": "CC0 1.0"
+  },
+  {
+    "name": "CDDL-1.0",
+    "path": "https://opensource.org/licenses/CDDL-1.0",
+    "title": "Common Development and Distribution License 1.0"
+  },
+  {
+    "name": "CECILL-2.1",
+    "path": "https://opensource.org/licenses/CECILL-2.1",
+    "title": "CeCILL License 2.1"
+  },
+  {
+    "name": "CNRI-Python",
+    "path": "https://opensource.org/licenses/CNRI-Python",
+    "title": "CNRI Python License"
+  },
+  {
+    "name": "CPAL-1.0",
+    "path": "https://opensource.org/licenses/CPAL-1.0",
+    "title": "Common Public Attribution License 1.0"
+  },
+  {
+    "name": "CUA-OPL-1.0",
+    "path": "https://opensource.org/licenses/CUA-OPL-1.0",
+    "title": "CUA Office Public License 1.0"
+  },
+  {
+    "name": "DSL",
+    "path": "https://opendefinition.org/licenses/dsl",
+    "title": "Design Science License"
+  },
+  {
+    "name": "ECL-2.0",
+    "path": "https://opensource.org/licenses/ECL-2.0",
+    "title": "Educational Community License 2.0"
+  },
+  {
+    "name": "EFL-2.0",
+    "path": "https://opensource.org/licenses/EFL-2.0",
+    "title": "Eiffel Forum License 2.0"
+  },
+  {
+    "name": "EPL-1.0",
+    "path": "https://opensource.org/licenses/EPL-1.0",
+    "title": "Eclipse Public License 1.0"
+  },
+  {
+    "name": "EPL-2.0",
+    "path": "https://opensource.org/licenses/EPL-2.0",
+    "title": "Eclipse Public License 2.0"
+  },
+  {
+    "name": "EUDatagrid",
+    "path": "https://opensource.org/licenses/EUDatagrid",
+    "title": "EU DataGrid Software License"
+  },
+  {
+    "name": "EUPL-1.1",
+    "path": "https://opensource.org/licenses/EUPL-1.1",
+    "title": "European Union Public License 1.1"
+  },
+  {
+    "name": "Entessa",
+    "path": "https://opensource.org/licenses/Entessa",
+    "title": "Entessa Public License"
+  },
+  {
+    "name": "FAL-1.3",
+    "path": "https://opendefinition.org/licenses/fal",
+    "title": "Free Art License 1.3"
+  },
+  {
+    "name": "Fair",
+    "path": "https://opensource.org/licenses/Fair",
+    "title": "Fair License"
+  },
+  {
+    "name": "Frameworx-1.0",
+    "path": "https://opensource.org/licenses/Frameworx-1.0",
+    "title": "Frameworx License 1.0"
+  },
+  {
+    "name": "GFDL-1.3-no-cover-texts-no-invariant-sections",
+    "path": "https://opendefinition.org/licenses/gfdl",
+    "title": "GNU Free Documentation License 1.3 with no cover texts and no invariant sections"
+  },
+  {
+    "name": "GPL-2.0",
+    "path": "https://opensource.org/licenses/GPL-2.0",
+    "title": "GNU General Public License 2.0"
+  },
+  {
+    "name": "GPL-3.0",
+    "path": "https://opensource.org/licenses/GPL-3.0",
+    "title": "GNU General Public License 3.0"
+  },
+  {
+    "name": "HPND",
+    "path": "https://opensource.org/licenses/HPND",
+    "title": "Historical Permission Notice and Disclaimer"
+  },
+  {
+    "name": "IPA",
+    "path": "https://opensource.org/licenses/IPA",
+    "title": "IPA Font License"
+  },
+  {
+    "name": "IPL-1.0",
+    "path": "https://opensource.org/licenses/IPL-1.0",
+    "title": "IBM Public License 1.0"
+  },
+  {
+    "name": "ISC",
+    "path": "https://opensource.org/licenses/ISC",
+    "title": "ISC License"
+  },
+  {
+    "name": "Intel",
+    "path": "https://opensource.org/licenses/Intel",
+    "title": "Intel Open Source License"
+  },
+  {
+    "name": "LGPL-2.1",
+    "path": "https://opensource.org/licenses/LGPL-2.1",
+    "title": "GNU Lesser General Public License 2.1"
+  },
+  {
+    "name": "LGPL-3.0",
+    "path": "https://opensource.org/licenses/LGPL-3.0",
+    "title": "GNU Lesser General Public License 3.0"
+  },
+  {
+    "name": "LO-FR-2.0",
+    "path": "https://www.etalab.gouv.fr/licence-ouverte-open-licence",
+    "title": "Open License 2.0"
+  },
+  {
+    "name": "LPL-1.0",
+    "path": "https://opensource.org/licenses/LPL-1.0",
+    "title": "Lucent Public License (\"Plan9\") 1.0"
+  },
+  {
+    "name": "LPL-1.02",
+    "path": "https://opensource.org/licenses/LPL-1.02",
+    "title": "Lucent Public License 1.02"
+  },
+  {
+    "name": "LPPL-1.3c",
+    "path": "https://opensource.org/licenses/LPPL-1.3c",
+    "title": "LaTeX Project Public License 1.3c"
+  },
+  {
+    "name": "MIT",
+    "path": "https://opensource.org/licenses/MIT",
+    "title": "MIT License"
+  },
+  {
+    "name": "MPL-1.0",
+    "path": "https://opensource.org/licenses/MPL-1.0",
+    "title": "Mozilla Public License 1.0"
+  },
+  {
+    "name": "MPL-1.1",
+    "path": "https://opensource.org/licenses/MPL-1.1",
+    "title": "Mozilla Public License 1.1"
+  },
+  {
+    "name": "MPL-2.0",
+    "path": "https://opensource.org/licenses/MPL-2.0",
+    "title": "Mozilla Public License 2.0"
+  },
+  {
+    "name": "MS-PL",
+    "path": "https://opensource.org/licenses/MS-PL",
+    "title": "Microsoft Public License"
+  },
+  {
+    "name": "MS-RL",
+    "path": "https://opensource.org/licenses/MS-RL",
+    "title": "Microsoft Reciprocal License"
+  },
+  {
+    "name": "MirOS",
+    "path": "https://opensource.org/licenses/MirOS",
+    "title": "MirOS Licence"
+  },
+  {
+    "name": "Motosoto",
+    "path": "https://opensource.org/licenses/Motosoto",
+    "title": "Motosoto License"
+  },
+  {
+    "name": "Multics",
+    "path": "https://opensource.org/licenses/Multics",
+    "title": "Multics License"
+  },
+  {
+    "name": "NASA-1.3",
+    "path": "https://opensource.org/licenses/NASA-1.3",
+    "title": "NASA Open Source Agreement 1.3"
+  },
+  {
+    "name": "NCSA",
+    "path": "https://opensource.org/licenses/NCSA",
+    "title": "University of Illinois/NCSA Open Source License"
+  },
+  {
+    "name": "NGPL",
+    "path": "https://opensource.org/licenses/NGPL",
+    "title": "Nethack General Public License"
+  },
+  {
+    "name": "NPOSL-3.0",
+    "path": "https://opensource.org/licenses/NPOSL-3.0",
+    "title": "Non-Profit Open Software License 3.0"
+  },
+  {
+    "name": "NTP",
+    "path": "https://opensource.org/licenses/NTP",
+    "title": "NTP License"
+  },
+  {
+    "name": "Naumen",
+    "path": "https://opensource.org/licenses/Naumen",
+    "title": "Naumen Public License"
+  },
+  {
+    "name": "Nokia",
+    "path": "https://opensource.org/licenses/Nokia",
+    "title": "Nokia Open Source License"
+  },
+  {
+    "name": "OCLC-2.0",
+    "path": "https://opensource.org/licenses/OCLC-2.0",
+    "title": "OCLC Research Public License 2.0"
+  },
+  {
+    "name": "ODC-BY-1.0",
+    "path": "https://opendefinition.org/licenses/odc-by",
+    "title": "Open Data Commons Attribution License 1.0"
+  },
+  {
+    "name": "ODbL-1.0",
+    "path": "https://opendefinition.org/licenses/odc-odbl",
+    "title": "Open Data Commons Open Database License 1.0"
+  },
+  {
+    "name": "OFL-1.1",
+    "path": "https://opensource.org/licenses/OFL-1.1",
+    "title": "Open Font License 1.1"
+  },
+  {
+    "name": "OGL-Canada-2.0",
+    "path": "https://open.canada.ca/en/open-government-licence-canada",
+    "title": "Open Government License 2.0 (Canada)"
+  },
+  {
+    "name": "OGL-UK-1.0",
+    "path": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/1/",
+    "title": "Open Government Licence 1.0 (United Kingdom)"
+  },
+  {
+    "name": "OGL-UK-2.0",
+    "path": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/",
+    "title": "Open Government Licence 2.0 (United Kingdom)"
+  },
+  {
+    "name": "OGL-UK-3.0",
+    "path": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "title": "Open Government Licence 3.0 (United Kingdom)"
+  },
+  {
+    "name": "OGTSL",
+    "path": "https://opensource.org/licenses/OGTSL",
+    "title": "Open Group Test Suite License"
+  },
+  {
+    "name": "OSL-3.0",
+    "path": "https://opensource.org/licenses/OSL-3.0",
+    "title": "Open Software License 3.0"
+  },
+  {
+    "name": "PDDL-1.0",
+    "path": "https://opendefinition.org/licenses/odc-pddl",
+    "title": "Open Data Commons Public Domain Dedication and Licence 1.0"
+  },
+  {
+    "name": "PHP-3.0",
+    "path": "https://opensource.org/licenses/PHP-3.0",
+    "title": "PHP License 3.0"
+  },
+  {
+    "name": "PostgreSQL",
+    "path": "https://opensource.org/licenses/PostgreSQL",
+    "title": "PostgreSQL License"
+  },
+  {
+    "name": "Python-2.0",
+    "path": "https://opensource.org/licenses/Python-2.0",
+    "title": "Python License 2.0"
+  },
+  {
+    "name": "QPL-1.0",
+    "path": "https://opensource.org/licenses/QPL-1.0",
+    "title": "Q Public License 1.0"
+  },
+  {
+    "name": "RPL-1.5",
+    "path": "https://opensource.org/licenses/RPL-1.5",
+    "title": "Reciprocal Public License 1.5"
+  },
+  {
+    "name": "RPSL-1.0",
+    "path": "https://opensource.org/licenses/RPSL-1.0",
+    "title": "RealNetworks Public Source License 1.0"
+  },
+  {
+    "name": "RSCPL",
+    "path": "https://opensource.org/licenses/RSCPL",
+    "title": "Ricoh Source Code Public License"
+  },
+  {
+    "name": "SISSL",
+    "path": "https://opensource.org/licenses/SISSL",
+    "title": "Sun Industry Standards Source License 1.1"
+  },
+  {
+    "name": "SPL-1.0",
+    "path": "https://opensource.org/licenses/SPL-1.0",
+    "title": "Sun Public License 1.0"
+  },
+  {
+    "name": "SimPL-2.0",
+    "path": "https://opensource.org/licenses/SimPL-2.0",
+    "title": "Simple Public License 2.0"
+  },
+  {
+    "name": "Sleepycat",
+    "path": "https://opensource.org/licenses/Sleepycat",
+    "title": "Sleepycat License"
+  },
+  {
+    "name": "Talis",
+    "path": "https://opendefinition.org/licenses/tcl",
+    "title": "Talis Community License"
+  },
+  {
+    "name": "Unlicense",
+    "path": "https://unlicense.org/",
+    "title": "Unlicense"
+  },
+  {
+    "name": "VSL-1.0",
+    "path": "https://opensource.org/licenses/VSL-1.0",
+    "title": "Vovida Software License 1.0"
+  },
+  {
+    "name": "W3C",
+    "path": "https://opensource.org/licenses/W3C",
+    "title": "W3C License"
+  },
+  {
+    "name": "WXwindows",
+    "path": "https://opensource.org/licenses/WXwindows",
+    "title": "wxWindows Library License"
+  },
+  {
+    "name": "Watcom-1.0",
+    "path": "https://opensource.org/licenses/Watcom-1.0",
+    "title": "Sybase Open Watcom Public License 1.0"
+  },
+  {
+    "name": "Xnet",
+    "path": "https://opensource.org/licenses/Xnet",
+    "title": "X.Net License"
+  },
+  {
+    "name": "ZPL-2.0",
+    "path": "https://opensource.org/licenses/ZPL-2.0",
+    "title": "Zope Public License 2.0"
+  },
+  {
+    "name": "Zlib",
+    "path": "https://opensource.org/licenses/Zlib",
+    "title": "zlib/libpng license"
+  },
+  {
+    "name": "dli-model-use",
+    "path": "http://data.library.ubc.ca/datalib/geographic/DMTI/license.html",
+    "title": "Statistics Canada: Data Liberation Initiative (DLI) - Model Data Use Licence"
+  },
+  {
+    "name": "geogratis",
+    "path": "http://geogratis.gc.ca/geogratis/licenceGG",
+    "title": "Geogratis"
+  },
+  {
+    "name": "hesa-withrights",
+    "path": "https://web.archive.org/web/20131009082944/http://www.hesa.ac.uk/index.php?option=com_content&task=view&id=2619&Itemid=209",
+    "title": "Higher Education Statistics Agency Copyright with data.gov.uk rights"
+  },
+  {
+    "name": "localauth-withrights",
+    "path": "",
+    "title": "Local Authority Copyright with data.gov.uk rights"
+  },
+  {
+    "name": "met-office-cp",
+    "path": "https://www.metoffice.gov.uk/climatechange/science/monitoring/ukcp09/UKCIP08_license_agreement_130709.pdf",
+    "title": "Met Office UK Climate Projections Licence Agreement"
+  },
+  {
+    "name": "mitre",
+    "path": "https://opensource.org/licenses/CVW",
+    "title": "MITRE Collaborative Virtual Workspace License (CVW License)"
+  },
+  {
+    "name": "notspecified",
+    "path": "",
+    "title": "License Not Specified"
+  },
+  {
+    "name": "other-at",
+    "path": "",
+    "title": "Other (Attribution)"
+  },
+  {
+    "name": "other-closed",
+    "path": "",
+    "title": "Other (Not Open)"
+  },
+  {
+    "name": "other-nc",
+    "path": "",
+    "title": "Other (Non-Commercial)"
+  },
+  {
+    "name": "other-open",
+    "path": "",
+    "title": "Other (Open)"
+  },
+  {
+    "name": "other-pd",
+    "path": "",
+    "title": "Other (Public Domain)"
+  },
+  {
+    "name": "ukclickusepsi",
+    "path": "",
+    "title": "UK Click Use PSI"
+  },
+  {
+    "name": "ukcrown",
+    "path": "",
+    "title": "UK Crown Copyright"
+  },
+  {
+    "name": "ukcrown-withrights",
+    "path": "",
+    "title": "UK Crown Copyright with data.gov.uk rights"
+  },
+  {
+    "name": "ukpsi",
+    "path": "https://opendefinition.org/licenses/ukpsi",
+    "title": "UK PSI Public Sector Information"
+  }
+]
