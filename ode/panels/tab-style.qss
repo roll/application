@@ -1,0 +1,24 @@
+QPushButton {
+    text-align: left;
+    font-weight: normal;
+}
+
+QPushButton:hover,
+QPushButton:focus { color: green }
+
+QTabWidget::pane {
+  border: 0px;
+  margin: 0px;
+  /* Fixes double border inside pane with pyqt5 */
+  padding: 0px;
+}
+
+QLineEdit {
+  border-radius: 8px;
+  border: 1px solid #bdbdbd;
+  padding: 5px 15px;
+}
+
+QLineEdit:focus {
+  border: 1px solid #d0e3ff;
+}
