@@ -1,1 +1,0 @@
-export { LinearProgress } from './Linear'

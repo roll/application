@@ -1,1 +1,0 @@
-export { DeleteFileDialog } from './DeleteFile'

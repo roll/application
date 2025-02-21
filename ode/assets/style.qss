@@ -1,0 +1,55 @@
+QWidget {
+    background: #FFF;
+    color: #404040;
+    font-size: 19px;  /* multi-os support */
+}
+
+* { gridline-color: lightgrey; } /* multi-os support */
+
+QPushButton {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4C5564;
+  border: 0;
+  padding: 6px 8px;
+}
+QPushButton:hover {
+    background-color: #F0F0F0;
+}
+QPushButton#button_save, QPushButton#button_publish {
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFF;
+  background-color: #000;
+  border-style: outset;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: #000;
+}
+QPushButton#button_save:hover, QPushButton#button_publish:hover {
+  color: #FFF;
+  background: #0288D1;
+  border-color: #0288d1;
+}
+QPushButton#button_upload {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0288d1;
+  border-style: outset;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: #0288d1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+QPushButton#button_upload:hover {
+  color: #FFF;
+  background: #0288D1;
+}
+QTreeView {
+  border: 0px;
+}

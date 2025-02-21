@@ -1,45 +1,43 @@
 ---
 title: Development
 sidebar:
-  order: 3
+  order: 1
 ---
 
-Open Data Editor uses a client/server architecture wrapped into a desktop application. As a server, we use a Python codebase that uses [frictionless-py](https://framework.frictionlessdata.io/) for data and metadata processing. As a client, we use this codebase written in TypeScript that uses React for components and Zustand for state management. As a desktop wrapper, we use Electron for NodeJS.
+Open Data Editor is written in PySide6, the official Python module from the [Qt for Python project](https://wiki.qt.io/Qt_for_Python), which provides access to the complete Qt 6.0+ framework.
+
+You can refer to the [Official Documentation](https://doc.qt.io/qtforpython-6/) to learn more about it. (And it's a handy documentation to bookmark!)
 
 ## Prerequisites
 
-To start working on the project you need the following dependencies in your machine:
+We are using 3.11. To start working on the project you need the following dependencies in your machine:
 
-- Python 3.11+
-- Node 20+
+- Python 3.11
 - python3.11-dev (For PyInstaller)
+- Node 18+ (For this documentation page)
 
 ## Enviroment
 
-:::tip
-For development orchestration we use [Hatch](https://github.com/pypa/hatch) for Python (defined in `pyproject.toml`) and [NPM](https://docs.npmjs.com/cli/) for JavaScript (defined in `package.json`). We use `make` to run joint commands (defined in `Makefile`)
+As common practice with all python project, you should create a Virtual Environment (using your favorite tool!) to install all the requirements.
+
+If using Python's default virtual env you can execute:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+## Makefile
+
+The project provides a `Makefile` with some usefull commands.
+
+```bash
+make help
+```
+
+:::note
+All make commands that executes python commands (like `make start` or `make install`) requires a manually activated virtualenv to run.
 :::
-
-NPM is included into the Node distribution so we just need to install `hatch`:
-
-```bash
-pip3 install hatch
-```
-
-### Python
-
-Before starting with the project we recommend configuring `hatch`. The following line will ensure that all the virtual environments will be stored in the `.python` directory in project root:
-
-```bash
-hatch config set 'dirs.env.virtual' '.python'
-hatch shell # Enter the venv
-```
-
-Now you can setup you IDE to use a proper Python path:
-
-```bash
-.python/opendataeditor/bin/python
-```
 
 ## Installation
 
@@ -49,54 +47,14 @@ To start working on the project install the dependencies:
 make install
 ```
 
-### JavaScript
-
-We highly recommend enabling TypeScript checks for your IDE.
+> Make install will also cd into the `portal` folder and install all the dependencies for the astro project.
 
 ## Codebase
 
-### Application
-
-To work on the whole application:
+To work on the application:
 
 ```bash
 make start
-```
-
-Note that there are few CSV files in the `data` folder to test the app. You can find more in the internet (it's good to test it using different files).
-
-### Server
-
-Running the server in isolation:
-
-```bash
-make server # default folder
-# OR
-hatch run start <data-folder> # optionally provide a data folder path
-```
-
-### Client
-
-> It requires the server to be running
-
-Running the client in isolation:
-
-```bash
-make client
-# OR
-npm run start
-```
-
-### Desktop
-
-> It requires the server to be running
-
-Running desktop application:
-
-```bash
-make desktop
-# OR
-npm run desktop
 ```
 
 ## Documentation
@@ -108,20 +66,3 @@ make docs
 ```
 
 It will be automatically published on CloudFlare when merged to the `main` branch with previews available for pull requests.
-
-## Translations
-
-Use approptriate `t` function to translate strings in the codebase. TypeScript will check if the key exists in the primary translation file. To add a new translation key:
-
-- add it to the `locale/translations/en.json` file
-- run `OPENAI_API_KEY=<YOUR-KEY> make translate` to update the secondary translation files
-
-## Releasing
-
-> You need to be a maintainer to release a new version
-
-- Update the version in `package.json` according to SemVer
-- Create a pull request with the change and get it approved and merged
-- GitHub Actions will automatically create a [release draft](https://github.com/okfn/opendataeditor/releases) with build artifacts to be tested and published
-- Until the draft realease is published, every new pull request merged will update the draft with new artifacts
-- Review, edit, and publish the draft release when it is ready

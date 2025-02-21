@@ -1,0 +1,19 @@
+[Desktop Entry]
+
+# The type of the thing this desktop file refers to
+Type=Application
+
+# The Application Name
+Name=Open Data Editor
+
+# Tooltip comment to show in menus
+Comment=Data management for humans.
+
+# The path (folder) in which the executable is run
+Path=/opt/opendataeditor
+
+# The executable (can include arguments)
+Exec=/opt/opendataeditor/opendataeditor
+
+# The icon we install for the application, use the target filesystem path
+Icon=org.okfn.opendataeditor
