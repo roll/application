@@ -125,7 +125,8 @@ class DataUploadDialog(QDialog):
         if not filename:
             return
 
-        shutil.copy(filename, Paths.PROJECT_PATH)
+        destination_filepath = Paths.get_unique_destination_filepath(filename)
+        shutil.copy(filename, destination_filepath)
         self.accept()
 
     def add_folders(self):
@@ -155,10 +156,11 @@ class DataUploadDialog(QDialog):
         filename = table.name
         if table.format == "gsheets":
             filename = self._read_url_html_title(url)
-        file_path = os.path.join(Paths.PROJECT_PATH, filename + '.csv')
+
+        destination_filepath = Paths.get_unique_destination_filepath(filename + ".csv")
 
         try:
-            with open(file_path, mode='w') as file:
+            with open(destination_filepath, mode='w') as file:
                 table.write(file.name)
             self.accept()
         except Exception:

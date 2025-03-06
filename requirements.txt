@@ -2,3 +2,4 @@ frictionless==5.18.0
 openpyxl==3.1.5
 PySide6==6.8.2.1
 openai==1.61.1
+pytest==8.3.5

@@ -1,5 +1,4 @@
 import os
-
 from pathlib import Path
 
 
@@ -23,7 +22,7 @@ class Paths:
         return os.path.join(cls.assets, "translations", filename)
 
     @classmethod
-    def get_path_to_metadata_file(cls, filepath: str|Path) -> Path:
+    def get_path_to_metadata_file(cls, filepath):
         """Returns the path to the metadata file of the given file.
 
         Metadata is a JSON object that stores Fricionless Metadata and any other
@@ -44,3 +43,28 @@ class Paths:
         metadata_path = cls.METADATA_PATH / relative_path
         metadata_filepath = metadata_path / (filepath.stem + '.json')
         return metadata_filepath
+
+    @classmethod
+    def get_unique_destination_filepath(cls, src_filepath, project_path=None):
+        """Returns a unique destination_filepath by appending a number if the file already exists.
+
+        If the specified file already exists, the method will generate a new filename by
+        appending a number in parentheses to the original name. For example:
+
+          - For a file named 'myfile.csv', if it doesn't exist, it will return 'myfile.csv'.
+          - If 'myfile.csv' already exists, it will return 'myfile(1).csv'.
+          - If 'myfile(1).csv' also exists, it will return 'myfile(2).csv', and so on.
+        """
+
+        src_filepath = Path(src_filepath) if isinstance(src_filepath, str) else src_filepath
+
+        project_path = cls.PROJECT_PATH if project_path is None else project_path
+        destination_filepath = Path(project_path) / src_filepath.name
+
+        # If already exists we increment to `filename (n) until we find one not taking
+        counter = 1
+        while destination_filepath.exists():
+            destination_filepath = destination_filepath.with_stem(f"{src_filepath.stem}({counter})")
+            counter += 1
+
+        return destination_filepath
