@@ -484,7 +484,7 @@ class MainWindow(QMainWindow):
         of languages. All text that needs to be translated needs to be set inside
         this function so we can call it to refresh the UI.
 
-        This method should be call when:
+        This method should be called when:
           a) The application is load for the first time (MainWindow.__init__)
           b) Every time the user selects a different language (language ComboBox)
           c) An event related to language change is fired (like the user changing

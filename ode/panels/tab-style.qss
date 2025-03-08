@@ -1,0 +1,38 @@
+QPushButton {
+    text-align: left;
+    font-weight: normal;
+    border: none;
+}
+
+QPushButton:hover!pressed {color: grey}
+
+QTabWidget::pane {
+  border: 0px;
+  margin: 0px;
+  /* Fixes double border inside pane with pyqt5 */
+  padding: 0px;
+}
+
+QLineEdit {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    min-height: 20px;
+    margin: 2px 0px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #86b7fe;
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+QLabel {
+  font-weight: medium;
+  font: sans-serif;
+  font-size: 16px;
+}
